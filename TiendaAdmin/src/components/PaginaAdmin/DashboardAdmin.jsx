@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import ListaCategoriaApi from '../../api/ListaCategoriaApi'; // Ajusta el path si es necesario
+import personaUsuariaAPI from '../../api/personaUsuariaAPI'; // Usa el mismo API que en ListadoDeUsuarios
 
 function DashboardAdmin() {
   const navigate = useNavigate();
@@ -9,8 +9,8 @@ function DashboardAdmin() {
   useEffect(() => {
     const fetchUsuarios = async () => {
       try {
-        const response = await ListaCategoriaApi.findAll();
-        setUsuarios(response.data || []);
+        const data = await personaUsuariaAPI.findAll();
+        setUsuarios(data || []);
       } catch (error) {
         console.error('Error al obtener los usuarios:', error);
       }
@@ -19,9 +19,9 @@ function DashboardAdmin() {
     fetchUsuarios();
   }, []);
 
-  // Calcular usuarios nuevos (registrados en los últimos 7 días)
   const usuariosNuevos = usuarios.filter(usuario => {
-    const fechaRegistro = new Date(usuario.fecha);
+    const fecha = usuario.fecha?.replaceAll('/', '-');
+    const fechaRegistro = new Date(fecha);
     const hoy = new Date();
     const diferenciaDias = (hoy - fechaRegistro) / (1000 * 60 * 60 * 24);
     return diferenciaDias <= 7;
@@ -45,8 +45,8 @@ function DashboardAdmin() {
           <div className="valor">{usuariosNuevos.length}</div>
         </div>
         <div className="tarjeta-dashboard">
-          <h2>Productos vendidos</h2>
-          <div className="valor">156</div>
+          <h2>Usuarios totales</h2>
+          <div className="valor">{usuarios.length}</div>
         </div>
       </div>
 
@@ -73,30 +73,36 @@ function DashboardAdmin() {
             </tr>
           </thead>
           <tbody>
-            {usuarios.map(usuario => (
-              <tr key={usuario.id}>
-                <td>#{usuario.id.toString().padStart(3, '0')}</td>
-                <td>{usuario.nombre}</td>
-                <td>{usuario.correo}</td>
-                <td>{usuario.fecha}</td>
-                <td className={usuario.estado === 'Activo' ? 'estado-activo' : 'estado-inactivo'}>
-                  {usuario.estado}
-                </td>
-                <td>
-                  {usuario.estado === 'Activo' ? (
-                    <button className="btn-admin secundario">Desactivar</button>
-                  ) : (
-                    <button className="btn-admin verde">Activar</button>
-                  )}
-                  <button 
-                    className="btn-admin" 
-                    onClick={() => navigate(`/admin/usuario/${usuario.id}`)}
-                  >
-                    Ver Detalle
-                  </button>
+            {usuarios.length === 0 ? (
+              <tr>
+                <td colSpan="6" style={{ textAlign: 'center' }}>
+                  No hay usuarios registrados.
                 </td>
               </tr>
-            ))}
+            ) : (
+              usuarios.map(usuario => (
+                <tr key={usuario.id}>
+                  <td>#{usuario.id.toString().padStart(3, '0')}</td>
+                  <td>{usuario.nombre}</td>
+                  <td>{usuario.correo}</td>
+                  <td>{usuario.fecha}</td>
+                  <td className={usuario.estado === 'Activo' ? 'estado-activo' : 'estado-inactivo'}>
+                    {usuario.estado}
+                  </td>
+                  <td>
+                    <button className="btn-admin secundario">
+                      {usuario.estado === 'Activo' ? 'Desactivar' : 'Activar'}
+                    </button>
+                    <button 
+                      className="btn-admin" 
+                      onClick={() => navigate(`/admin/usuario/${usuario.id}`)}
+                    >
+                      Ver Detalle
+                    </button>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
@@ -124,61 +130,28 @@ function DashboardAdmin() {
         </thead>
         <tbody>
           <tr>
-            <td>
-              <Link to="/admin/orden/1256" style={{ textDecoration: 'none', color: 'inherit' }}>
-                #1256
-              </Link>
-            </td>
+            <td><Link to="/admin/orden/1256">#1256</Link></td>
             <td>Juan Pérez</td>
             <td>20/05/2025</td>
             <td>S/ 199.00</td>
             <td className="estado-activo">Completado</td>
-            <td>
-              <button 
-                className="btn-admin" 
-                onClick={() => navigate('/admin/orden/1256')}
-              >
-                Ver
-              </button>
-            </td>
+            <td><button onClick={() => navigate('/admin/orden/1256')}>Ver</button></td>
           </tr>
           <tr>
-            <td>
-              <Link to="/admin/orden/1255" style={{ textDecoration: 'none', color: 'inherit' }}>
-                #1255
-              </Link>
-            </td>
+            <td><Link to="/admin/orden/1255">#1255</Link></td>
             <td>María Gómez</td>
             <td>20/05/2025</td>
             <td>S/ 245.00</td>
             <td className="estado-activo">Completado</td>
-            <td>
-              <button 
-                className="btn-admin" 
-                onClick={() => navigate('/admin/orden/1255')}
-              >
-                Ver
-              </button>
-            </td>
+            <td><button onClick={() => navigate('/admin/orden/1255')}>Ver</button></td>
           </tr>
           <tr>
-            <td>
-              <Link to="/admin/orden/1254" style={{ textDecoration: 'none', color: 'inherit' }}>
-                #1254
-              </Link>
-            </td>
+            <td><Link to="/admin/orden/1254">#1254</Link></td>
             <td>Carlos Ruiz</td>
             <td>19/05/2025</td>
             <td>S/ 120.00</td>
             <td className="estado-inactivo">Cancelado</td>
-            <td>
-              <button 
-                className="btn-admin" 
-                onClick={() => navigate('/admin/orden/1254')}
-              >
-                Ver
-              </button>
-            </td>
+            <td><button onClick={() => navigate('/admin/orden/1254')}>Ver</button></td>
           </tr>
         </tbody>
       </table>

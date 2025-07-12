@@ -134,7 +134,7 @@ function ProductosxCategoria() {
             : productosOrdenados.map((prod) => (
               <div key={prod.id} className="producto-card">
                 <img
-                  src={`http://localhost:3001/uploads/productos/${prod.imagen}`}
+                  src={`https://backend-production-2cd4.up.railway.app/uploads/productos/${prod.imagen}`}
                   alt={prod.nombre}
                   style={{ cursor: 'pointer' }}
                   onClick={() => navigate(`/productos/${prod.id}`)}

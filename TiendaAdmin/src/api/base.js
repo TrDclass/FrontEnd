@@ -1,4 +1,4 @@
-const URI = 'http://localhost:3001/'
+const URI = 'https://backend-production-2cd4.up.railway.app/'
 
 const get = async (endpoint) => {
     return await fetch(URI + endpoint)

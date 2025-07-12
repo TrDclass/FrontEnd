@@ -39,7 +39,7 @@ function MasVendidos1() {
           {productosPagina.map((prod) => (
             <div key={prod.id} className="producto-card">
               <img
-                src={`https://backend-production-2cd4.up.railway.app/uploads/productos/${imagen}`}
+                src={`https://backend-production-2cd4.up.railway.app/uploads/productos/${prod.imagen}`}
                 alt={prod.nombre}
                 onError={e => { e.target.src = 'https://img.freepik.com/free-vector/glitch-error-404-page_23-2148105404.jpg'; }}
               />

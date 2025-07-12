@@ -12,7 +12,7 @@ const create = async (ListaCategoria) => {
     formData.append(key, Listacategoria[key]);
   }
 
-  const response = await fetch('http://localhost:3001/ListaCategoria', {
+  const response = await fetch('https://backend-production-2cd4.up.railway.app/ListaCategoria', {
     method: 'POST',
     body: formData 
   });
@@ -27,7 +27,7 @@ const remove = async (id) => await base.remove(`${endpoint}/${id}`);
 const findOne = async (id) => await base.get(`${endpoint}/${id}`);
 
 const updateForm = async (id, payload) => {
-  return await fetch(`http://localhost:3001/Listacategorias/${id}`, {
+  return await fetch(`https://backend-production-2cd4.up.railway.app/Listacategorias/${id}`, {
     method: 'PUT',
     body: payload
   }).then(res => res.json());

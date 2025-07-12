@@ -34,7 +34,7 @@ function ListaProductos() {
     }
   };
 
-  const getImageUrl = (imagen) => `http://localhost:3001/uploads/productos/${imagen}`;
+  const getImageUrl = (imagen) => `https://backend-production-2cd4.up.railway.app/uploads/productos/${imagen}`;
 
   // Filtrar productos por ID (si es número) o por nombre
   const productosFiltrados = productos.filter(producto => {

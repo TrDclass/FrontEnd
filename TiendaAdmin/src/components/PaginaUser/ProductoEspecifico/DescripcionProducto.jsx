@@ -20,7 +20,7 @@ function DescripcionProducto() {
       <div className="descripcion-producto-card">
         <div className="desc-prod-img">
           <img
-            src={`http://localhost:3001/uploads/productos/${producto.imagen}`}
+            src={`https://backend-production-2cd4.up.railway.app/uploads/productos/${producto.imagen}`}
             alt={producto.nombre}
             style={{ maxWidth: 300 }}
           />

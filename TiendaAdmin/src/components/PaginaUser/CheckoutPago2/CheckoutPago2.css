@@ -1,0 +1,138 @@
+/* Contenedor general */
+.checkout-container {
+  padding: 20px;
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+/* Encabezado superior */
+.checkout-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.checkout-header h1 {
+  font-size: 32px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.checkout-header h3 {
+  font-size: 20px;
+  color: #666;
+  margin-top: 5px;
+}
+
+/* Layout principal: dos columnas separadas */
+.checkout-body {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  gap: 40px; /* MÁS SEPARACIÓN ENTRE SECCIONES */
+  padding: 30px;
+    align-items: flex-start; /* Evita que los elementos se estiren */
+}
+
+/* Sección izquierda: Datos de pago */
+.left-section {
+  flex: 1;
+  background-color: white;
+  border: 2px solid #ddd;
+  padding: 30px; /* MÁS ESPACIO INTERNO */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-size: 18px;
+}
+
+/* Imagen de la tarjeta */
+.card-image-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.card-image {
+  width: 320px; /* Más grande */
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Formulario de pago */
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.payment-form label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.payment-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botón Pagar */
+.btn-pagar {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #ff5f46;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-pagar:hover {
+  background-color: #c0392b;
+}
+
+/* Sección derecha: Resumen de compra */
+.resumen-compra {
+  width: 35%; /* REDUCIDO UN POCO PARA EQUILIBRAR */
+  background-color: white;
+  border: 2px solid #ddd;
+  padding: 30px; /* MÁS ESPACIO INTERNO */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  font-size: 18px;
+}
+
+/* Estilos dentro de resumen */
+.resumen-compra h3 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.resumen-detalles p {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.delivery {
+  color: rgb(9, 214, 9);
+}
+
+.total-pago {
+  font-size: 22px;
+  font-weight: bold;
+  color: #000;
+}

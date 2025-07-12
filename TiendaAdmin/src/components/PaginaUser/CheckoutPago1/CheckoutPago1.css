@@ -1,0 +1,99 @@
+/* Contenedor general de la sección */
+.contenedor-checkout {
+  
+  padding: 20px;
+  background: #ffffff;
+}
+
+/* Título y subtítulo */
+.titulo {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+
+
+/* Bloque izquierdo: método de pago */
+.metodo-pago {
+  
+  padding: 30px;
+  border-right: 1px solid  #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.metodo-titulo {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+/* Contenedor del QR */
+.qr-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-titulo {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.qr-imagen {
+  width: 400px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.qr-tiempo {
+  color: #888;
+  font-size: 14px;
+}
+
+/* Botón para confirmar pago */
+.btn-ya-pague {
+  margin-top: 30px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-ya-pague:hover {
+  background-color: #c0392b;
+}
+
+/* Bloque derecho: resumen de compra */
+.resumen-checkout {
+  width: 30%;
+  padding: 30px;
+  text-align: left;
+}
+
+.resumen-checkout h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.resumen-checkout p {
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+hr {
+  margin: 10px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+

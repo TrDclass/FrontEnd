@@ -1,0 +1,125 @@
+/* Contenedor general */
+.contenedor-pedido {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.contenedor-pedido h2 {
+  text-align: center;
+  color: black;
+}
+
+.contenedor-pedido h3 {
+
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.direccion-envio h3 {
+  color: #000000;
+  font-size: 22px;
+
+}
+
+
+/* Layout principal: lista de productos y secciones de resumen */
+.pedido-layout {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Lista de productos */
+.pedido-productos {
+  background-color: #ffffff;
+  border: 2px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 70%;
+}
+
+/* Sección derecha con resumen y dirección */
+.pedido-derecha {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 30%;
+}
+
+/* Resumen del pedido */
+.resumen-pedido {
+  background-color: white;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dirección de envío con imagen */
+.direccion-envio {
+  display: flex;
+  align-items: flex-start; /* Ajustado para que la imagen quede más arriba */
+  justify-content: space-between;
+  background-color: white;
+  border: 2px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  width: 100%; /* Hace que coincida con el ancho del resumen */
+  min-height: 150px; /* Para mantener igualdad de tamaño */
+  gap: 10px;  /* Espacio entre el texto y la imagen */
+}
+
+/* Contenedor de texto, limitado para que no ocupe todo el espacio */
+.direccion-texto {
+  text-align: left;
+  flex: 1;
+  max-width: 60%;   /* Ajusta este valor hasta que el cuadro quede balanceado */
+}
+
+/* Contenedor de la imagen */
+.direccion-imagen {
+  flex-shrink: 0;   /* Evita que la imagen se reduzca */
+}
+
+/* Imagen de dirección */
+.direccion-imagen img {
+  width: 80px;
+  height: auto;
+  border-radius: 8px;
+  align-self: flex-start; /* Mueve la imagen hacia arriba */
+}
+
+/* Botón de ofertas */
+.btn-ver-ofertas {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #ff5f46;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-ver-ofertas:hover {
+  background-color: #ed4a31;
+}
+
+/* Línea de fecha de entrega */
+.fecha-entrega-line {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  white-space: nowrap; /* Evita que se rompa la línea */
+  gap: 15px; /* Ajusta el espacio a lo que consideres adecuado */
+}
+
+/* Hace que la fecha esté en negrita */
+.fecha-entrega {
+  font-weight: bold;
+}

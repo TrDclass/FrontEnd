@@ -1,0 +1,103 @@
+.producto-card-carrito {
+  display: flex;
+  flex-direction: row; /* para que los hijos estén en fila */
+  align-items: flex-start; /* alinearlos arriba */
+  border: 1px solid #ccc;
+  padding: 16px;
+  margin: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+  background-color: rgb(255, 255, 255);
+  text-align: left; /* cambiar a left porque ya no es centrado */
+  max-width: 600px;
+  max-height: 150px;
+  gap: 16px; /* espacio entre imagen y texto */
+}
+
+.producto-imagen {
+  flex: 0 0 150px; /* tamaño fijo para la imagen */
+  max-width: 150px;
+  
+}
+
+.producto-imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin-left: 0;
+  align-items: center;
+  
+}
+
+.producto-info {
+  flex: 1 1 auto;       /* que crezca y se encoja según espacio */
+  min-width: 0;         /* permite que el texto se reduzca y haga wrap */
+  margin-top: 0;
+}
+
+h3 {
+  margin: 4px 0;
+  word-wrap: break-word; /* para que las palabras largas puedan partirse */
+  overflow-wrap: break-word;
+  white-space: normal; /* evita que el texto quede en una sola línea */
+}
+
+h4 {
+  margin: 4px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  color: gray;           /* color gris */
+  font-weight: normal;   /* sin negrita */
+}
+
+
+.llegada {
+  margin: 4px 0;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  font-size: 1.17em; /* Tamaño estándar de un h3 */
+  color: #ff5f46;      /* Color coral */
+}
+
+
+
+.precio_y_cantidad {
+  
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.precio {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.cantidad {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cantidad button {
+  background-color: #ff5f46;
+  color: white;
+  font-size: 18px;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.producto-separador {
+  border: none;
+  height: 1px;
+  background-color: #ccc;
+  margin: 10px 0;
+  width: 100%;
+}

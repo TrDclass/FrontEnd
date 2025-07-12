@@ -1,0 +1,134 @@
+/* Contenedor principal */
+.contenedor-checkout {
+  max-width: 1100px;
+  margin-left: 30px; /* Más a la izquierda */
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: left;
+}
+
+/* Título y subtítulo */
+.titulo-checkout {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 20px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Layout principal */
+.checkout-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Sección de métodos de pago - Más grande y más alto */
+.metodo-pago {
+  width: 85%; /* Más espacio */
+  padding: 30px; /* Más relleno interno */
+  border: 1px solid #D5D5D5;
+  border-radius: 8px;
+  min-height: 450px; /* Aumenta la altura mínima */
+}
+
+/* Espaciado interno para cada opción */
+.opcion {
+  margin-bottom: 40px; /* Más separación entre QR y Tarjetas */
+}
+
+/* Radio button personalizado */
+.radio-label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.radio-label input[type="radio"] {
+  display: none;
+}
+
+.radio-custom {
+  display: inline-block;
+  width: 30px; /* Más grande */
+  height: 30px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  margin-right: 12px;
+  position: relative;
+}
+
+.radio-label input[type="radio"]:checked + .radio-custom::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 16px;
+  height: 16px;
+  background-color: #28a745;
+  border-radius: 50%;
+}
+
+.opcion-text {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Imágenes de QR y Tarjetas - Más grandes */
+.qr-section img,
+.tarjetas-section img {
+  width: 180px; /* Más grandes */
+  margin-top: 10px;
+}
+
+.qr-section p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Sección de resumen de compra - Más pequeña */
+.checkout-resumen-metodopago {
+  background-color: white;
+  border: 2px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  color: black;
+  font-size: 18px;
+  /* La altura se ajusta al contenido, ya que no se fuerza ningún tamaño fijo */
+}
+
+.resumen-checkout {
+    width: 40%;
+    padding: 20px;
+    border: 1px solid #D5D5D5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de confirmar pago */
+.btn-confirmar-pago {
+  margin-top: 15px;
+  padding: 12px;
+  width: 100%;
+  background-color: #28a745;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-confirmar-pago:hover {
+  background-color: #218838;
+}

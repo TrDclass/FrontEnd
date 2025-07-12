@@ -27,7 +27,7 @@ import CheckoutPago2 from './components/PaginaUser/CheckoutPago2/CheckoutPago2';
 import PedidoCompleto from './components/PaginaUser/PedidoCompleto/PedidoCompleto';
 import ProductosxCategoria from './components/PaginaUser/Categorias/ProductosxCategoria';
 import ProductoEspecifico from './components/PaginaUser/ProductoEspecifico';
-import CambiarContrasena from './components/PaginaUser/Cambiarcontrasena';
+import CambiarContrasena from './components/PaginaUser/Cambiarcontraseña';
 import DatosUsuario from './components/PaginaUser/DatosUsuario';
 import AgregarCategoria from './components/PaginaAdmin/AgregarCategoria';
 import Categorias from './components/PaginaUser/PaginaPripal/Categorias';
